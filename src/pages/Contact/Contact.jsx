@@ -51,17 +51,18 @@ const PROJECT_TYPES = [
 
 /* ───────────────── Toast helper (minimal) ───────────────── */
 
-const toast = ({ title, description }) => {
-  console.error(title, description);
-  alert(`${title}\n${description}`);
-};
+// const toast = ({ title, description }) => {
+//   console.error(title, description);
+//   alert(`${title}\n${description}`);
+// };
 
 /* ───────────────── usePageContent (merged) ───────────────── */
 
 const usePageContent = (page) => {
-  const [sections, setSections] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+  // const [sections, setSections] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  const [sections] = useState([]);
+  const [loading] = useState(false);
   useEffect(() => {
     // const fetchSections = async () => {
     //   try {
@@ -288,7 +289,6 @@ const Contact = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch ">
-
             {/* LEFT: CONTACT EMAIL FORM */}
             <div className="h-full">
               {submitted ? (
@@ -670,112 +670,115 @@ const Contact = () => {
       </section>
 
       {/* ── INFO STRIPS: CONTACT (LEFT) + BOOK CALL (RIGHT) ── */}
-<section className="py-16 px-4">
-  <div className="beam-divider mb-12" />
-  <div className="container mx-auto max-w-6xl">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
-      {/* LEFT: CONTACT EMAIL INFO STRIP */}
-      <div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          {[
-            {
-              label: getText("info_strip", "item_1_label", "Response Time"),
-              value: getText("info_strip", "item_1_value", "< 24 Hours"),
-            },
-            {
-              label: getText(
-                "info_strip",
-                "item_2_label",
-                "Free Consultation",
-              ),
-              value: getText(
-                "info_strip",
-                "item_2_value",
-                "No Commitment",
-              ),
-            },
-            {
-              label: getText("info_strip", "item_3_label", "Available"),
-              value: getText("info_strip", "item_3_value", "Worldwide"),
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="glass-card rounded-xl p-6 bg-slate-900/70 border border-slate-900/90 shadow-[0_0_0_1px_rgba(15,23,42,0.55),0_22px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl transform transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.7)] hover:-translate-y-1 hover:scale-[1.02]"
-            >
-              <p
-                className="font-display text-2xl font-800 mb-2"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, hsl(43 96% 55%), hsl(43 90% 50%))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {item.value}
-              </p>
+      <section className="py-16 px-4">
+        <div className="beam-divider mb-12" />
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+            {/* LEFT: CONTACT EMAIL INFO STRIP */}
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                {[
+                  {
+                    label: getText(
+                      "info_strip",
+                      "item_1_label",
+                      "Response Time",
+                    ),
+                    value: getText("info_strip", "item_1_value", "< 24 Hours"),
+                  },
+                  {
+                    label: getText(
+                      "info_strip",
+                      "item_2_label",
+                      "Free Consultation",
+                    ),
+                    value: getText(
+                      "info_strip",
+                      "item_2_value",
+                      "No Commitment",
+                    ),
+                  },
+                  {
+                    label: getText("info_strip", "item_3_label", "Available"),
+                    value: getText("info_strip", "item_3_value", "Worldwide"),
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="glass-card rounded-xl p-6 bg-slate-900/70 border border-slate-900/90 shadow-[0_0_0_1px_rgba(15,23,42,0.55),0_22px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl transform transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.7)] hover:-translate-y-1 hover:scale-[1.02]"
+                  >
+                    <p
+                      className="font-display text-2xl font-800 mb-2"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(90deg, hsl(43 96% 55%), hsl(43 90% 50%))",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {item.value}
+                    </p>
 
-              <p className="text-muted-foreground text-sm text-slate-200">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* RIGHT: BOOK A CALL INFO STRIP */}
-      <div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          {[
-            {
-              icon: Clock,
-              label: "Duration",
-              value: "30 Minutes",
-            },
-            {
-              icon: Calendar,
-              label: "Availability",
-              value: "Mon – Fri",
-            },
-            {
-              icon: Phone,
-              label: "Format",
-              value: "Video or Phone",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="glass-card rounded-xl p-6 bg-slate-900/70 border border-slate-900/90 shadow-[0_0_0_1px_rgba(15,23,42,0.55),0_22px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl transform transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.7)] hover:-translate-y-1 hover:scale-[1.02]"
-            >
-              <div className="flex items-center justify-center mb-3">
-                <item.icon className="text-yellow-400" size={22} />
+                    <p className="text-muted-foreground text-sm text-slate-200">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
               </div>
-
-              <p
-                className="font-display text-2xl font-800 mb-2"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, hsl(43 96% 55%), hsl(43 90% 50%))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {item.value}
-              </p>
-
-              <p className="text-muted-foreground text-sm text-slate-200">
-                {item.label}
-              </p>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+            {/* RIGHT: BOOK A CALL INFO STRIP */}
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                {[
+                  {
+                    icon: Clock,
+                    label: "Duration",
+                    value: "30 Minutes",
+                  },
+                  {
+                    icon: Calendar,
+                    label: "Availability",
+                    value: "Mon – Fri",
+                  },
+                  {
+                    icon: Phone,
+                    label: "Format",
+                    value: "Video or Phone",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="glass-card rounded-xl p-6 bg-slate-900/70 border border-slate-900/90 shadow-[0_0_0_1px_rgba(15,23,42,0.55),0_22px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl transform transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.7)] hover:-translate-y-1 hover:scale-[1.02]"
+                  >
+                    <div className="flex items-center justify-center mb-3">
+                      <item.icon className="text-yellow-400" size={22} />
+                    </div>
+
+                    <p
+                      className="font-display text-2xl font-800 mb-2"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(90deg, hsl(43 96% 55%), hsl(43 90% 50%))",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {item.value}
+                    </p>
+
+                    <p className="text-muted-foreground text-sm text-slate-200">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

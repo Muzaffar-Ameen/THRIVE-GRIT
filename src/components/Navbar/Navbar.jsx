@@ -25,54 +25,54 @@ const navLinks = [
 ];
 
 // Theme toggle (dark / light)
-const ThemeToggle = () => {
-  const [dark, setDark] = useState(true);
+// const ThemeToggle = () => {
+//   const [dark, setDark] = useState(true);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored === "light") {
-      setDark(false);
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    } else {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    }
-  }, []);
+//   useEffect(() => {
+//     const stored = localStorage.getItem("theme");
+//     if (stored === "light") {
+//       setDark(false);
+//       document.documentElement.classList.remove("dark");
+//       document.documentElement.classList.add("light");
+//     } else {
+//       setDark(true);
+//       document.documentElement.classList.add("dark");
+//       document.documentElement.classList.remove("light");
+//     }
+//   }, []);
 
-  const toggle = () => {
-    const next = !dark;
-    setDark(next);
+//   const toggle = () => {
+//     const next = !dark;
+//     setDark(next);
 
-    if (next) {
-      // DARK MODE ON
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      // LIGHT MODE ON
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  };
+//     if (next) {
+//       // DARK MODE ON
+//       document.documentElement.classList.add("dark");
+//       document.documentElement.classList.remove("light");
+//       localStorage.setItem("theme", "dark");
+//     } else {
+//       // LIGHT MODE ON
+//       document.documentElement.classList.remove("dark");
+//       document.documentElement.classList.add("light");
+//       localStorage.setItem("theme", "light");
+//     }
+//   };
 
-  return (
-    <motion.button
-      onClick={toggle}
-      className="p-2 rounded-full glass transition-all duration-300 hover:scale-110"
-      aria-label="Toggle theme"
-      whileTap={{ scale: 0.9 }}
-    >
-      {dark ? (
-        <Sun className="w-4 h-4 text-accent" />
-      ) : (
-        <Moon className="w-4 h-4 text-primary" />
-      )}
-    </motion.button>
-  );
-};
+//   return (
+//     <motion.button
+//       onClick={toggle}
+//       className="p-2 rounded-full glass transition-all duration-300 hover:scale-110"
+//       aria-label="Toggle theme"
+//       whileTap={{ scale: 0.9 }}
+//     >
+//       {dark ? (
+//         <Sun className="w-4 h-4 text-accent" />
+//       ) : (
+//         <Moon className="w-4 h-4 text-primary" />
+//       )}
+//     </motion.button>
+//   );
+// };
 
 // NavLink compat wrapper (JS)
 const NavLink = forwardRef(

@@ -2,7 +2,11 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, MeshWobbleMaterial } from "@react-three/drei";
+import {
+  Float,
+  MeshDistortMaterial,
+  MeshWobbleMaterial,
+} from "@react-three/drei";
 // import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { Clock, ArrowRight, BookOpen } from "lucide-react";
@@ -287,8 +291,7 @@ const BLOG_POSTS = [
       "A perfect Lighthouse score isn't luck — it's a system. Here's our exact checklist: image optimisation, font loading strategy, critical CSS inlining, and the three Vercel config flags that make all the difference.",
     readTime: 6,
     date: "Feb 12, 2026",
-    gradient:
-      "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
+    gradient: "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
     icon: "⚡",
     featured: true,
   },
@@ -302,8 +305,7 @@ const BLOG_POSTS = [
       "Forget one-off blog posts. A pillar-and-cluster content model creates topic authority that compounds month over month. We break down the exact structure we used to take RankForge from page 5 to position 1.",
     readTime: 8,
     date: "Feb 5, 2026",
-    gradient:
-      "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f6feb 100%)",
+    gradient: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f6feb 100%)",
     icon: "📈",
     featured: false,
   },
@@ -311,14 +313,12 @@ const BLOG_POSTS = [
     id: "design-systems-founders",
     category: "UI/UX",
     tag: "Design Systems",
-    title:
-      "Why Founders Should Demand a Design System, Not Just a Website",
+    title: "Why Founders Should Demand a Design System, Not Just a Website",
     excerpt:
       "A website without a design system is technical debt from day one. We explain what a design system actually is, what it includes, and why it saves you money every single sprint after you have it.",
     readTime: 5,
     date: "Jan 28, 2026",
-    gradient:
-      "linear-gradient(135deg, #1e0533 0%, #2d1b69 50%, #11998e 100%)",
+    gradient: "linear-gradient(135deg, #1e0533 0%, #2d1b69 50%, #11998e 100%)",
     icon: "◉",
     featured: false,
   },
@@ -331,8 +331,7 @@ const BLOG_POSTS = [
       "Inconsistent fonts, stock-photo headshots, and a logo that doesn't scale — these signals tell potential clients you're not ready. Here's what premium positioning actually looks like at every touchpoint.",
     readTime: 7,
     date: "Jan 20, 2026",
-    gradient:
-      "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     icon: "◆",
     featured: false,
   },
@@ -345,8 +344,7 @@ const BLOG_POSTS = [
       "Click-through rate is still king, but watch time, re-watches, and audience satisfaction score are where the algorithm separates channels that plateau from channels that compound. Here's how to optimise all three.",
     readTime: 9,
     date: "Jan 14, 2026",
-    gradient:
-      "linear-gradient(135deg, #1a0000 0%, #3d0000 50%, #c0392b 100%)",
+    gradient: "linear-gradient(135deg, #1a0000 0%, #3d0000 50%, #c0392b 100%)",
     icon: "▶",
     featured: false,
   },
@@ -354,14 +352,12 @@ const BLOG_POSTS = [
     id: "core-web-vitals-guide",
     category: "Web Dev",
     tag: "Core Web Vitals",
-    title:
-      "Core Web Vitals: The No-Nonsense Guide for Non-Technical Founders",
+    title: "Core Web Vitals: The No-Nonsense Guide for Non-Technical Founders",
     excerpt:
       "INP replaced FID, LCP still matters, and CLS can quietly tank your rankings. We decode what each metric means for your business — and the quick wins that move the needle fastest without a full rebuild.",
     readTime: 6,
     date: "Jan 7, 2026",
-    gradient:
-      "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
+    gradient: "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
     icon: "🚀",
     featured: false,
   },
@@ -375,8 +371,7 @@ const BLOG_POSTS = [
       "Most hero sections answer the wrong question. Visitors don't want to know what you do — they want to know what changes for them. We share the 3-part headline formula we use across every client site.",
     readTime: 5,
     date: "Dec 30, 2025",
-    gradient:
-      "linear-gradient(135deg, #0a2e1a 0%, #0d4a29 50%, #1a7a40 100%)",
+    gradient: "linear-gradient(135deg, #0a2e1a 0%, #0d4a29 50%, #1a7a40 100%)",
     icon: "✍",
     featured: false,
   },
@@ -390,8 +385,7 @@ const BLOG_POSTS = [
       "Project-based work gives you cash flow. Retainers give you compounding outcomes. We unpack the real difference, when each model makes sense, and what questions to ask before you sign anything.",
     readTime: 6,
     date: "Dec 22, 2025",
-    gradient:
-      "linear-gradient(135deg, #1a1000 0%, #3d2800 50%, #8a5a00 100%)",
+    gradient: "linear-gradient(135deg, #1a1000 0%, #3d2800 50%, #8a5a00 100%)",
     icon: "📊",
     featured: false,
   },
@@ -413,8 +407,7 @@ const BLOG_POSTS = [
 
 /* ───────────────── Types ───────────────── */
 
-const toDateISOString = (dateString) =>
-  new Date(dateString).toISOString();
+const toDateISOString = (dateString) => new Date(dateString).toISOString();
 
 const makeStaticBlogPosts = () =>
   BLOG_POSTS.map((p) => ({
@@ -755,8 +748,8 @@ const NewsletterStrip = () => {
 
 const Blog = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [dbPosts, setDbPosts] = useState([]);
-  const [loadingDb, setLoadingDb] = useState(true);
+  const [dbPosts] = useState([]);
+  const [loadingDb] = useState(false);
 
   useEffect(() => {
     // const fetchPosts = async () => {
@@ -768,7 +761,6 @@ const Blog = () => {
     //       )
     //       .eq("published", true)
     //       .order("created_at", { ascending: false });
-
     //     if (data) setDbPosts(data);
     //   } catch (e) {
     //     console.error("Error loading Supabase blog posts", e);
@@ -776,7 +768,6 @@ const Blog = () => {
     //     setLoadingDb(false);
     //   }
     // };
-
     // fetchPosts();
   }, []);
 
@@ -852,8 +843,8 @@ const Blog = () => {
           className="text-lg md:text-xl max-w-lg relative z-10"
           style={{ color: "hsl(var(--muted-foreground))" }}
         >
-          Strategy, design, and growth thinking from the team behind Thrive
-          Grit — written for founders, not marketers.
+          Strategy, design, and growth thinking from the team behind Thrive Grit
+          — written for founders, not marketers.
         </motion.p>
       </section>
 

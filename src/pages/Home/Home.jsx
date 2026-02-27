@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
 import TiltCard from "../../components/TiltCard/TiltCard";
 import MagneticButton from "../../components/MagneticButton/MagneticButton";
-import TestimonialsSection from "../../components/TestimonialsSection/TestimonialsSection";
+// import TestimonialsSection from "../../components/TestimonialsSection/TestimonialsSection";
 import { whatWeBuild, whyCards, featuredWork } from "../../config/site";
 import "./Home.css";
 
@@ -20,7 +20,6 @@ import {
   Zap,
   Gauge,
   ArrowRight,
-  ArrowUpRight,
 } from "lucide-react";
 
 const iconMap = {
