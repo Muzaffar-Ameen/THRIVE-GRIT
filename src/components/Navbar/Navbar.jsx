@@ -3,7 +3,8 @@ import { useState, useEffect, forwardRef } from "react";
 import "./Navbar.css";
 
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
