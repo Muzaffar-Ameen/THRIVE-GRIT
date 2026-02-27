@@ -1,0 +1,185 @@
+/* Card styling for "What we build" items */
+.what-we-build-card {
+  border: 1px solid rgba(234, 179, 8, 0.3); /* soft yellow border */
+  background: rgba(15, 23, 42, 0.7);        /* dark slate with transparency */
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.what-we-build-card:hover {
+  border-color: #eab308;                    /* bright yellow on hover */
+  background: rgba(15, 23, 42, 0.9);        /* a bit stronger bg on hover */
+  transform: translateY(-2px);
+}
+
+/* Icon color override */
+.what-we-build-card .what-we-build-icon {
+  color: #eab308;                           /* yellow */
+}
+
+/* Optional: stronger yellow on hover */
+.what-we-build-card:hover .what-we-build-icon {
+  color: #facc15;
+}
+
+.Statsstrip{
+  border:none; /* soft yellow border */
+  background: rgba(15, 23, 42, 0.7);        /* dark slate with transparency */
+}
+.btnletsTalk{
+  color: #0c0c0b;                           /* yellow */
+  background-color: gold;
+}
+.hWhyus {
+  text-decoration: underline;               /* basic underline */
+
+  /* optional: customize */
+  text-decoration-color: #eab308;           /* yellow underline */
+  text-decoration-thickness: 5px;           /* a bit thicker */
+  text-underline-offset: 4px;               /* space between text and line */
+
+  
+}
+
+
+.cardWhyFounders{
+  border: 1px solid rgba(234, 179, 8, 0.3); /* soft yellow border */
+  background: rgba(15, 23, 42, 0.7);        /* dark slate with transparency */
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+/* src/pages/Home/Home.css */
+
+/* Base card: slightly smaller, subtle glow, soft border */
+.why-card {
+  border: 1px solid rgba(148, 163, 184, 0.35);  /* soft slate border */
+  background: rgba(15, 23, 42, 0.75);           /* dark glassy bg */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.6),            /* depth */
+    0 0 18px rgba(148, 163, 184, 0.25);        /* soft cool glow */
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Slightly smaller card feel */
+.why-card {
+  transform: translateY(0);
+}
+
+/* Hover: yellow border + stronger glow, small lift */
+.why-card:hover {
+  border-color: #facc15;                       /* bright yellow */
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.7),
+    0 0 26px rgba(250, 204, 21, 0.45);         /* yellow glow */
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-3px);
+}
+
+/* Icon circle stays subtle but supports glow feel */
+.why-card-icon-wrap {
+  border: 1px solid rgba(250, 204, 21, 0.35);  /* soft yellow circle outline */
+}
+
+/* Icon color: yellow by default */
+.why-card-icon {
+  color: #facc15;                              /* yellow-400 */
+}
+
+/* Optionally brighten icon on hover */
+.why-card:hover .why-card-icon {
+  color: #fbbf24;                              /* yellow-300 */
+}
+
+/* If you want the whole "Why Founders Stick With Us" area a bit tighter */
+.why-section-heading {
+  letter-spacing: 0.04em;
+}
+
+/* Featured Work cards */
+
+.cardFeatured {
+  max-width: 320px; /* smaller width so they don't look huge */
+  border: 1px solid rgba(148, 163, 184, 0.35);   /* soft slate border */
+  background: rgba(15, 23, 42, 0.85);            /* dark glass bg */
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(148, 163, 184, 0.25);          /* subtle cool glow */
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover state: stronger yellow accent + lift */
+.cardFeatured:hover {
+  border-color: #facc15;                          /* yellow border */
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.75),
+    0 0 26px rgba(250, 204, 21, 0.45);           /* yellow glow */
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-4px);
+}
+
+/* Description hidden by default */
+.cardFeatured-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition:
+    max-height 0.25s ease,
+    opacity 0.25s ease,
+    margin-top 0.25s ease;
+}
+
+/* Reveal description on card hover */
+.cardFeatured:hover .cardFeatured-desc {
+  max-height: 200px;   /* enough for 2–3 lines */
+  opacity: 1;
+  margin-top: 0.35rem;
+}
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.4rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #dfe1ea;                 /* dark text */
+                          /* yellow → orange */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(250, 204, 21, 0.4);
+  border: 1px solid rgba(186, 180, 158, 0.7);
+
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-btn:hover {
+  
+  border-color: #7e7a66;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.7),
+    0 0 26px rgba(252, 211, 77, 0.6);
+  transform: translateY(-2px);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(250, 204, 21, 0.4);
+}

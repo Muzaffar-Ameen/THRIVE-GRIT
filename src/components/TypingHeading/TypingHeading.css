@@ -1,0 +1,46 @@
+/* Center the whole heading text */
+.mysegments {
+  text-align: center;
+  max-width: 22ch;  /* slightly wider for bigger text */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Base: make Design. Code. white (segments without className) */
+.mysegments span:not(.text-gradient-gold):not(.text-gradient-blue) {
+  color: #ffffff;
+}
+
+/* Rank. – golden with subtle glow */
+.text-gradient-gold {
+  background: linear-gradient(120deg, #facc15, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(250, 204, 21, 0.45),
+    0 0 18px rgba(250, 204, 21, 0.35);
+  animation: goldPulse 2.4s ease-in-out infinite alternate;
+}
+
+/* Repeat. – light blue gradient */
+.text-gradient-blue {
+  background: linear-gradient(120deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Optional gold glow animation for Rank. */
+@keyframes goldPulse {
+  from {
+    text-shadow:
+      0 0 6px rgba(250, 204, 21, 0.35),
+      0 0 14px rgba(250, 204, 21, 0.25);
+  }
+  to {
+    text-shadow:
+      0 0 14px rgba(250, 204, 21, 0.6),
+      0 0 26px rgba(250, 204, 21, 0.4);
+  }
+}

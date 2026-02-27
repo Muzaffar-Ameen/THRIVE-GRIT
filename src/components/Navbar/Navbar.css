@@ -1,0 +1,76 @@
+.narbaritems{
+    /* backdrop-filter: blur(10px); */
+    border: rgb(124, 194, 171) solid 1px;
+    border-radius: 20px;
+    /* background-color: rgb(35, 35, 79); */
+    color: thistle;
+}
+.TGmain{
+    /* background: linear-gradient(90deg, #C0C0C0, #FFFFFF);  */
+    /* background-clip: text; */
+    /* -webkit-background-clip: text; */
+    color: whitesmoke;
+}
+
+.TGBS{
+    /* background: linear-gradient(90deg, #FFD700, #FFA500);  */
+    /* background-clip: text; */
+    /* -webkit-background-clip: text; */
+    color: gold;
+}
+.hamburger{
+    color: thistle;
+}
+.brandText{
+    color: black;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    /* background-clip: text; */
+}
+/* base nav link look */
+.narbaritems .group {
+  position: relative;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* gold background on hover */
+.narbaritems .group:hover {
+  background-color: gold;
+  color: black;
+}
+
+/* underline for active link (current page) */
+.narbaritems .group span.relative.z-10 {
+  position: relative;
+}
+
+/* we already know active via location.pathname === link.href → text-accent */
+.narbaritems .group span.text-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #facc15, #f97316);
+}
+/* mobile drawer base link style (already has text classes in JSX) */
+.hamburger a {
+  transition: color 0.2s ease;
+}
+
+/* active mobile link = yellow text */
+.hamburger a.text-accent {
+  color: #facc15; /* gold/yellow */
+}
+/* optional: add a subtle underline for active mobile link */
+.hamburger a.text-accent::after {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  width: 100%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #facc15, #f97316);
+}

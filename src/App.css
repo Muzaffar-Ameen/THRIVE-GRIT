@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff; /* optional: default text white */
+}
+
 .App {
   text-align: center;
 }

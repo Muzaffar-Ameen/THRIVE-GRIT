@@ -1,0 +1,17 @@
+/* src/components/TestimonialsSection/TestimonialsSection.css */
+
+.testimonial-card {
+  border: 1px solid rgba(234, 179, 8, 0.35); /* yellow border */
+ 
+}
+
+.testimonial-card:hover {
+  border-color: #facc15;                      /* brighter yellow */
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(250, 204, 21, 0.35);
+  transform: translateY(-3px);
+}
+
+.testimonial-dot {
+  cursor: pointer;
+}

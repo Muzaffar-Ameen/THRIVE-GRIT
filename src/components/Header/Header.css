@@ -1,0 +1,92 @@
+/* extra top offset so header never touches navbar */
+.hero-offset {
+  margin-top: 5rem; /* was 7rem */
+   /* border: 1px solid red; */
+}
+
+@media (min-width: 1024px) {
+  .hero-offset {
+    margin-top: 2rem; /* was 8rem */
+  }
+}
+
+/* Center all hero content, including TypingHeading and buttons */
+.hero-container {
+  display: flex;
+  justify-content: center;
+   /* border: 1px solid red; */
+
+}
+
+.hero-inner {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* Subheading text */
+.hero-subtitle {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36rem; /* ~576px */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5f5; /* soft cool gray */
+  
+}
+
+/* CTA row */
+.hero-cta-row {
+  margin-top: 1rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  
+}
+
+/* Primary CTA: Start a Project – gold bg, black text */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: #facc15; /* gold */
+  color: #020617;            /* near-black */
+  text-decoration: none;
+  
+}
+
+/* Ensure inner elements inherit black color */
+.hero-btn-primary span,
+.hero-btn-primary svg {
+  color: inherit;
+  
+}
+
+/* Secondary CTA: View Our Work – outline with white text */
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(203, 213, 225, 0.4); /* border-silver/30-ish */
+  color: #ffffff;
+  background-color: rgba(15, 23, 42, 0.7);    /* bg-black/30-ish */
+  text-decoration: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgba(203, 213, 225, 0.8);
+}
